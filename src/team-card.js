@@ -1,22 +1,33 @@
 import { LitElement, html, css } from 'lit';
 
+import "@lrnwebcomponents/meme-maker/meme-maker.js";
 
-
+const bryce = new URL('../uploads/bryce-hr.jpg', import.meta.url).href;
 
 export class TeamCard extends LitElement {
-  static properties = {
-    version: {}
+  static get properties() {
+    return {
+      name: {
+        type: String,
+        reflect: true
+      },
+      fname: { type: String},
+      position: {
+        type: String,
+      },
+      top: { type: String},
+      imageDescription: { type: String},
+    }
    
   };
 
   static get styles(){
     return css`
   .player{
-  width: 350px;
-  border: 5px solid red;
-  outline: 5px solid blue;
-  
-}
+    width: 350px;
+    border: 6px solid blue;
+    outline: 6px solid red;
+  }
 
 .card{
   margin: 8px;
@@ -28,6 +39,7 @@ export class TeamCard extends LitElement {
   background-color: #F5F5DD;
   
   }
+  
 .card button:hover{
   background-color: red;
 }
@@ -125,6 +137,7 @@ h1{
     this.name = "Bryce Harper";
     this.imageDescription = "NLCS Game 5: Phillies vs Padres"
     this.stats = "Game Stats";
+    this.top= "ball go boom";
   }
 
   render() {
@@ -132,9 +145,13 @@ h1{
 
 
 <div class="card">
-  <img class ="logo" src="https://content.sportslogos.net/logos/54/70/full/hplu542ts3fp99gkmueu7uirg.gif"/>
+  <img class="logo" src="https://content.sportslogos.net/logos/54/70/full/hplu542ts3fp99gkmueu7uirg.gif"/>
   <h1>${this.name}</h1>
-  <img class="player" src="https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2022/10/1440/810/bryce-hr.jpg?ve=1&tl=1"/>
+     
+      <meme-maker>
+        image-url="${this.bryce}"
+        top-text="${this.top}"
+      </meme-maker>
   <p>${this.imageDescription}</p>
       <details class="details">
           <summary>${this.stats}</summary>
