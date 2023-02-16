@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="Put your description here.">
+  <base href="/">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #fdfbfb;
+    }
+  </style>
+  <title>team-card</title>
+</head>
+
+<body>
+  <div class="buttons">
+    <button class="duplicate">DUPLICATE</button>
+    <button onclick="changeHeading()" class="change">CHANGE HEADING</button>
+    <button class="bg-color">CHANGE COLOR</button>
+    <button onclick="deleteLast()" class="delete">DELETE COPY</button>
+  </div>
+  <team-card></team-card>
+  
+
+  <script type="module" src="./src/team-card.js"></script>
+  <script>
+    const duplicateFunction = function () {
+  console.log(btn);
+  const div1 = document.querySelector(".card");
+  var child = document.body.appendChild(div1.cloneNode(true));
+  child.classList.add("card2");
+  console.log(child);
+};
+const btn = document.querySelector(".duplicate");
+btn.addEventListener("click", duplicateFunction);
+
+
+function changeHeading() {
+ document.querySelector(".h1").innerHTML = "#3 Bryce Harper";
+  }
+
+
+document.querySelector(".card").addEventListener('mouseover', (event) => {
+  document.querySelector(".card").style.backgroundColor = "grey"
+});
+document.querySelector(".card").addEventListener('mouseout', (event) => {
+  document.querySelector(".card").style.backgroundColor = "#F5F5DD"
+});
+
+const changecolor = document.querySelector(".bg-color");
+changecolor.addEventListener("click", function (e) {
+  console.log("I changed the background color");
+  if (document.querySelector(".card").style.backgroundColor == "white") {
+    document.querySelector(".card").style.backgroundColor = "red";
+  } else {
+    document.querySelector(".card").style.backgroundColor = "white";
+  }
+});
+
+
+function deleteLast() {
+  var x = document.querySelector(".card2");
+  x.remove(0);
+}
+
+const cardDescription = document.querySelector(".description");
+const detailsButton = document.querySelector(".details");
+
+detailsButton.addEventListener("click", (e) => {
+  if (cardDescription.style.display === "none") {
+    cardDescription.style.display = "block";
+    detailsButton.textContent = "Hide Details";
+  } else {
+    cardDescription.style.display = "none";
+    detailsButton.textContent = "Show Details";
+  }
+});
+  </script>
+</body>
+
+</html>
