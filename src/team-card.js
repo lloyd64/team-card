@@ -1,13 +1,17 @@
 import { LitElement, html, css } from 'lit';
 
+
+
+
 export class TeamCard extends LitElement {
   static properties = {
-    version: {},
+    version: {}
+   
   };
 
   static get styles(){
     return css`
-    .bryce{
+  .player{
   width: 350px;
   border: 5px solid red;
   outline: 5px solid blue;
@@ -28,22 +32,23 @@ export class TeamCard extends LitElement {
   background-color: red;
 }
 
-.description{
+p{
   font-size: 21px;
   color: red;
   -webkit-text-stroke: .7px blue;
  }
-.h1{
+h1{
   font-size: 35px;
   color: red;
   -webkit-text-stroke: 1.2px blue;
 }
 .details{
-  margin: 8px;
-  border: 2px dashed blue;
-  padding: 16px;
+  margin: 16px;
+  border: 2px solid blue;
+  padding: 8px;
   width: 200px;
   box-shadow: 10px 5px 5px red;
+  
 }
 
 .buttons button{
@@ -74,7 +79,7 @@ export class TeamCard extends LitElement {
 }
 
 
-.img{
+.logo{
   width: 250px;
   height: 125px;
   border: 5px solid red;
@@ -95,11 +100,11 @@ export class TeamCard extends LitElement {
     padding: 8px 16px 8px 16px;
     
   }
-  .bryce{
+  .player{
     width: 200px
     
   }
-  .h1{
+  h1{
     font-size: 22px;
   }
   p{
@@ -117,8 +122,9 @@ export class TeamCard extends LitElement {
   
   constructor() {
     super();
-    const stuff = "things";
-    this.version = `I love ${stuff}`;
+    this.name = "Bryce Harper";
+    this.imageDescription = "NLCS Game 5: Phillies vs Padres"
+    this.stats = "Game Stats";
   }
 
   render() {
@@ -126,13 +132,16 @@ export class TeamCard extends LitElement {
 
 
 <div class="card">
-  <img class ="img" src="https://content.sportslogos.net/logos/54/70/full/hplu542ts3fp99gkmueu7uirg.gif"/>
-  <h1 class="h1">NLCS Game 5: Phillies vs Padres</h1>
-  <img class="bryce" src = "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2022/10/1440/810/bryce-hr.jpg?ve=1&tl=1"/>
-  <p class="description">Seconds after Bryce Harper's 8th inning go ahead home run in the 2022 NLCS</p>
-  <a>
-  <button class ="details">DETAILS</button>
-  </a>
+  <img class ="logo" src="https://content.sportslogos.net/logos/54/70/full/hplu542ts3fp99gkmueu7uirg.gif"/>
+  <h1>${this.name}</h1>
+  <img class="player" src="https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2022/10/1440/810/bryce-hr.jpg?ve=1&tl=1"/>
+  <p>${this.imageDescription}</p>
+      <details class="details">
+          <summary>${this.stats}</summary>
+          <div>
+            <slot></slot>
+          </div>
+      </details>
 </div>
 
 
