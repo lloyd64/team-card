@@ -2,7 +2,8 @@ import { LitElement, html, css } from 'lit';
 
 import "@lrnwebcomponents/meme-maker/meme-maker.js";
 
-const bryce = new URL('../uploads/bryce-hr.jpg', import.meta.url).href;
+
+const bryce = new URL("https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2022/10/1440/810/bryce-hr.jpg?ve=1&tl=1", import.meta.url).href;
 
 export class TeamCard extends LitElement {
   static get properties() {
