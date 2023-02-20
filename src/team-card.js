@@ -113,7 +113,7 @@ h1{
     
   }
   .player{
-    width: 200px
+    width: 200px;
     
   }
   h1{
@@ -124,7 +124,7 @@ h1{
   }
   .details{
     width: 100px;
-    padding: 8px 4px 4px 8px;;
+    padding: 8px 4px 4px 8px;
   }
   
   
@@ -135,7 +135,7 @@ h1{
   constructor() {
     super();
     this.name = "Bryce Harper";
-    this.imageDescription = "NLCS Game 5: Phillies vs Padres"
+    this.imageDescription = "NLCS Game 5: Phillies vs Padres";
     this.stats = "Game Stats";
     this.top= "ball go boom";
   }
@@ -149,7 +149,7 @@ h1{
   <h1>${this.name}</h1>
      
       <meme-maker>
-        image-url="${this.bryce}"
+        image-url="${bryce}"
         top-text="${this.top}"
       </meme-maker>
   <p>${this.imageDescription}</p>
