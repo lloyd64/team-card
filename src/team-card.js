@@ -1,9 +1,10 @@
+
 import { LitElement, html, css } from 'lit';
 
 //import "@lrnwebcomponents/meme-maker/meme-maker.js";
 
 
-const bryce = new URL("https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2022/10/1440/810/bryce-hr.jpg?ve=1&tl=1", import.meta.url).href;
+const bryce = ("https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2022/10/1440/810/bryce-hr.jpg?ve=1&tl=1");
 
 export class TeamCard extends LitElement {
   static get properties() {
@@ -18,12 +19,34 @@ export class TeamCard extends LitElement {
       },
       top: { type: String},
       imageDescription: { type: String},
+      accentColor: {
+        type: String,
+        reflect: true,
+        attribute: 'accent-color'
+      }
     }
    
   };
 
   static get styles(){
     return css`
+    :host([accent-color="blue"]) .card {
+      background-color: blue;
+      color: white;
+    }
+    :host([accent-color="red"]) .card {
+      background-color: red;
+      color: white;
+    }
+    :host([accent-color="black"]) .card {
+      background-color: black;
+      color: white;
+    }
+    :host([accent-color="tan"]) .card {
+      background-color: tan;
+      color: white;
+    }
+    
   .player{
     width: 350px;
     border: 6px solid blue;
@@ -41,9 +64,7 @@ export class TeamCard extends LitElement {
   
   }
   
-.card button:hover{
-  background-color: red;
-}
+
 
 p{
   font-size: 21px;
@@ -135,24 +156,30 @@ h1{
   
   constructor() {
     super();
+    this.accentColor = null;
     this.name = "Bryce Harper";
     this.imageDescription = "NLCS Game 5: Phillies vs Padres";
     this.stats = "Game Stats";
     this.top= "ball go boom";
+    
   }
+
+  
 
   render() {
     return html`
 
 
-<div class="card">
+<div class="card" part="card">
   <img class="logo" src="https://content.sportslogos.net/logos/54/70/full/hplu542ts3fp99gkmueu7uirg.gif"/>
   <h1>${this.name}</h1>
      
-      <meme-maker>
+    <meme-maker
         image-url="${bryce}"
         top-text="${this.top}"
-      </meme-maker>
+      >
+     </meme-maker>
+     
   <p>${this.imageDescription}</p>
       <details class="details">
           <summary>${this.stats}</summary>
