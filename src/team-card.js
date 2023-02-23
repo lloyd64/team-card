@@ -50,6 +50,7 @@ export class TeamCard extends LitElement {
   
 
 .card{
+  display: inline-block;
   margin: 8px;
   border: 6px solid blue;
   outline: 6px solid red;
