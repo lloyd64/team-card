@@ -47,11 +47,7 @@ export class TeamCard extends LitElement {
       color: white;
     }
     
-  .player{
-    width: 350px;
-    border: 6px solid blue;
-    outline: 6px solid red;
-  }
+  
 
 .card{
   margin: 8px;
@@ -80,8 +76,9 @@ h1{
   margin: 16px;
   border: 2px solid blue;
   padding: 8px;
-  width: 200px;
+  width: 85%;
   box-shadow: 10px 5px 5px red;
+  text-align: center;
   
 }
 
