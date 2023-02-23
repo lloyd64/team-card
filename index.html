@@ -19,7 +19,7 @@
   margin: 8px;
   border: 2px solid blue;
   padding: 8px;
-  width: 150px;
+  width: 125px;
   box-shadow: 10px 5px 5px red;
   background-color: white;
 }
@@ -82,11 +82,12 @@ function changeHeading() {
   }
 
 
+
 document.querySelector("team-card").addEventListener('mouseover', (event) => {
-  document.querySelector("team-card").style.backgroundColor = "grey"
+  document.querySelector("team-card").shadowRoot.querySelector(".card").style.backgroundColor = "grey"
 });
 document.querySelector("team-card").addEventListener('mouseout', (event) => {
-  document.querySelector("team-card").style.backgroundColor = "#F5F5DD"
+  document.querySelector("team-card").shadowRoot.querySelector(".card").style.backgroundColor = "#F5F5DD"
 });
 
 const changecolor = document.querySelector(".bg-color");
