@@ -32,19 +32,19 @@ export class TeamCard extends LitElement {
     return css`
     :host([accent-color="blue"]) .card {
       background-color: blue;
-      color: white;
+      color: black;
     }
     :host([accent-color="red"]) .card {
       background-color: red;
-      color: white;
+      color: black;
     }
     :host([accent-color="black"]) .card {
       background-color: black;
       color: white;
     }
     :host([accent-color="tan"]) .card {
-      background-color: tan;
-      color: white;
+      background-color: #F5F5DD;
+      color: black;
     }
     
   
@@ -83,32 +83,7 @@ h1{
   
 }
 
-.buttons button{
-  margin: 8px;
-  border: 2px dashed blue;
-  padding: 8px;
-  width: 150px;
-  box-shadow: 10px 5px 5px red;
-}
 
-  
-
-.duplicate:hover{
-  background-color: red;
-}
-
-.change:hover{
-  background-color: red;
-}
-
-
-.bg-color:hover{
-  background-color: red;
-}
-
-.delete:hover{
-  background-color: red;
-}
 
 
 .logo{

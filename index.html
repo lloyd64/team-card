@@ -63,6 +63,7 @@
   </team-card>
   
   
+  
 
   <script type="module" src="./src/team-card.js"></script>
   <script>
@@ -87,12 +88,12 @@ document.querySelector("team-card").addEventListener('mouseover', (event) => {
   document.querySelector("team-card").shadowRoot.querySelector(".card").style.backgroundColor = "grey"
 });
 document.querySelector("team-card").addEventListener('mouseout', (event) => {
-  document.querySelector("team-card").shadowRoot.querySelector(".card").style.backgroundColor = "#F5F5DD"
+  document.querySelector("team-card").shadowRoot.querySelector(".card").style.backgroundColor = null;
 });
 
 const changecolor = document.querySelector(".bg-color");
 changecolor.addEventListener("click", function (e) {
-  const colors = ["blue", "red", "black"]
+  const colors = ["blue", "red", "black","tan"]
   const randomColor = colors[Math.floor(Math.random() * colors.length)];
   document.querySelector("team-card").accentColor = randomColor;
 });
