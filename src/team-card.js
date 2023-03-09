@@ -23,13 +23,21 @@ export class TeamCard extends LitElement {
         type: String,
         reflect: true,
         attribute: 'accent-color'
+      },
+      headingChange: {
+        type: String,
+        reflect: true,
+        attribute: 'heading-change'
       }
+    
+      
     }
    
   };
 
   static get styles(){
     return css`
+    
     :host([accent-color="blue"]) .card {
       background-color: blue;
       color: black;
