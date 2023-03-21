@@ -46,6 +46,7 @@
 </head>
 
 <body>
+  <team-list></team-list>
   <div class="buttons">
     <button class="duplicate">DUPLICATE</button>
     <button onclick="changeHeading()" class="change">CHANGE HEADING</button>
@@ -63,8 +64,10 @@
     </ul>
   </team-card>
   
-  
-  
+  <script type="module">
+    import "./src/team-card.js";
+    import "./src/team-list.js"
+  </script>
 
   <script type="module" src="./src/team-card.js"></script>
   <script>

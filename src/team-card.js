@@ -24,11 +24,7 @@ export class TeamCard extends LitElement {
         reflect: true,
         attribute: 'accent-color'
       },
-      headingChange: {
-        type: String,
-        reflect: true,
-        attribute: 'heading-change'
-      }
+      
     
       
     }
